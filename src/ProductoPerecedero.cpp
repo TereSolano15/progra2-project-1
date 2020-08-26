@@ -3,3 +3,8 @@
 //
 
 #include "ProductoPerecedero.h"
+
+
+float ProductoPerecedero::getPrecio() {
+    return precio;
+}

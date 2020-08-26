@@ -4,10 +4,13 @@
 
 #ifndef MY_PROJECT_NAME_PRODUCTOPERECEDERO_H
 #define MY_PROJECT_NAME_PRODUCTOPERECEDERO_H
+#include "Producto.h"
 
-
-class ProductoPerecedero {
-
+class ProductoPerecedero: public Producto{
+private:
+    //hay que poner fecha
+public:
+    float getPrecio();
 };
 
 
