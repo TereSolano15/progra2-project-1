@@ -21,10 +21,6 @@ void Producto::setNombre(const string &nombre) {
     Producto::nombre = nombre;
 }
 
-float Producto::getPrecio() const {
-    return precio;
-}
-
 void Producto::setPrecio(float precio) {
     Producto::precio = precio;
 }

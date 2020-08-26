@@ -4,10 +4,25 @@
 
 #ifndef MY_PROJECT_NAME_PRODUCTONOPERECEDERO_H
 #define MY_PROJECT_NAME_PRODUCTONOPERECEDERO_H
+#include "Producto.h"
 
+class ProductoNoPerecedero : public Producto {
+private:
+    float porcentajeDeDescuento;
+public:
+    ProductoNoPerecedero();
 
-class ProductoNoPerecedero {
+    ProductoNoPerecedero(float porcentajeDeDescuento);
 
+    ProductoNoPerecedero(const string &nombre, float precio, int cantidad, float porcentajeDeDescuento);
+
+    virtual ~ProductoNoPerecedero();
+
+    float getPorcentajeDeDescuento() const;
+
+    void setPorcentajeDeDescuento(float porcentajeDeDescuento);
+
+    float getPrecio();
 };
 
 

@@ -9,7 +9,7 @@
 using namespace std;
 
 class Producto {
-private:
+protected:
     string nombre;
     float precio;
     int cantidad;
@@ -24,7 +24,7 @@ public:
 
     void setNombre(const string &nombre);
 
-    float getPrecio() const;
+    virtual float getPrecio() = 0;
 
     void setPrecio(float precio);
 
