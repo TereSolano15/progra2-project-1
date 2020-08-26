@@ -14,7 +14,25 @@ private:
     float precio;
     int cantidad;
 public:
+    Producto();
 
+    Producto(const string &nombre, float precio, int cantidad);
+
+    virtual ~Producto();
+
+    const string &getNombre() const;
+
+    void setNombre(const string &nombre);
+
+    float getPrecio() const;
+
+    void setPrecio(float precio);
+
+    int getCantidad() const;
+
+    void setCantidad(int cantidad);
+
+    string toString();
 };
 
 
