@@ -3,3 +3,8 @@
 //
 
 #include "IMaquinaAdministrradora.h"
+
+IMaquinaAdministrradora::~IMaquinaAdministrradora() {
+
+}
+
