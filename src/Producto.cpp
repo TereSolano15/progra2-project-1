@@ -21,6 +21,10 @@ void Producto::setNombre(const string &nombre) {
     Producto::nombre = nombre;
 }
 
+float Producto::getPrecio() const {
+    return precio;
+}
+
 void Producto::setPrecio(float precio) {
     Producto::precio = precio;
 }
@@ -33,6 +37,7 @@ void Producto::setCantidad(int cantidad) {
     Producto::cantidad = cantidad;
 }
 
+
 string Producto::toString() {
     stringstream s;
     s << "El nombre del producto es: " << getNombre()<< endl;
@@ -40,4 +45,6 @@ string Producto::toString() {
     s << "La cantidad de " << getNombre() << " que hay es: " << getCantidad() << endl;
     return s.str();
 }
+
+
 
