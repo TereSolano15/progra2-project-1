@@ -24,7 +24,7 @@ public:
 
     void setNombre(const string &nombre);
 
-    virtual float getPrecio() = 0;
+    float getPrecio() const;
 
     void setPrecio(float precio);
 
