@@ -8,8 +8,13 @@
 
 class ProductoPerecedero: public Producto{
 private:
-float fechaDeVencimiento;
+string fechaDeVencimiento;
 public:
+    ProductoPerecedero();
+
+    ProductoPerecedero(float fechaDeVencimiento);
+
+    ProductoPerecedero(const string &nombre, float precio, int cantidad, float fechaDeVencimiento);
 
 };
 
