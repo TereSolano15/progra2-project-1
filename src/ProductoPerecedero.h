@@ -8,14 +8,31 @@
 
 class ProductoPerecedero: public Producto{
 private:
-string fechaDeVencimiento;
+    int dia;
+    int mes;
+    int anno;
 public:
     ProductoPerecedero();
 
-    ProductoPerecedero(float fechaDeVencimiento);
+    ProductoPerecedero(int dia, int mes, int anno);
 
-    ProductoPerecedero(const string &nombre, float precio, int cantidad, float fechaDeVencimiento);
+    ProductoPerecedero(const string &nombre, float precio, int cantidad, int dia, int mes, int anno);
 
+    int getDia() const;
+
+    void setDia(int dia);
+
+    int getMes() const;
+
+    void setMes(int mes);
+
+    int getAnno() const;
+
+    void setAnno(int anno);
+
+    string fechaDeVencimiento();
+
+    string toString();
 };
 
 

@@ -7,7 +7,44 @@
 
 ProductoPerecedero::ProductoPerecedero() {}
 
-ProductoPerecedero::ProductoPerecedero(float fechaDeVencimiento) : fechaDeVencimiento(fechaDeVencimiento) {}
+ProductoPerecedero::ProductoPerecedero(int dia, int mes, int año) : dia(dia), mes(mes), anno(anno) {}
 
-ProductoPerecedero::ProductoPerecedero(const string &nombre, float precio, int cantidad, float fechaDeVencimiento)
-        : Producto(nombre, precio, cantidad), fechaDeVencimiento(fechaDeVencimiento) {}
+ProductoPerecedero::ProductoPerecedero(const string &nombre, float precio, int cantidad, int dia, int mes, int año)
+        : Producto(nombre, precio, cantidad), dia(dia), mes(mes), anno(anno) {}
+
+int ProductoPerecedero::getDia() const {
+    return dia;
+}
+
+void ProductoPerecedero::setDia(int dia) {
+    ProductoPerecedero::dia = dia;
+}
+
+int ProductoPerecedero::getMes() const {
+    return mes;
+}
+
+void ProductoPerecedero::setMes(int mes) {
+    ProductoPerecedero::mes = mes;
+}
+
+int ProductoPerecedero::getAnno() const {
+    return anno;
+}
+
+void ProductoPerecedero::setAnno(int anno) {
+    ProductoPerecedero::anno = anno;
+}
+
+string ProductoPerecedero::fechaDeVencimiento() {
+    stringstream output;
+    output<<getDia()<<"/"<<getMes()<<"/"<<getAnno();
+    return output.str();
+}
+
+string ProductoPerecedero::toString() {
+    stringstream output;
+    output << Producto::toString()<< endl;
+    output << "la fecha de vencimiento es:" << fechaDeVencimiento() << endl;
+    return output.str();
+}
