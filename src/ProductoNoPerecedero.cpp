@@ -26,3 +26,8 @@ void ProductoNoPerecedero::setPorcentajeDeDescuento(float porcentajeDeDescuento)
     ProductoNoPerecedero::porcentajeDeDescuento = porcentajeDeDescuento;
 }
 
+string ProductoNoPerecedero::toString() {
+    stringstream output;
+    output << Producto::toString() << endl;
+    output << "El porcentaje de descuento del producto es: " << getPorcentajeDeDescuento() << endl;
+}
