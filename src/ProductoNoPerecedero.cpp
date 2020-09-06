@@ -30,4 +30,5 @@ string ProductoNoPerecedero::toString() {
     stringstream output;
     output << Producto::toString() << endl;
     output << "El porcentaje de descuento del producto es: " << getPorcentajeDeDescuento() << endl;
+    return output.str();
 }
