@@ -26,6 +26,3 @@ void ProductoNoPerecedero::setPorcentajeDeDescuento(float porcentajeDeDescuento)
     ProductoNoPerecedero::porcentajeDeDescuento = porcentajeDeDescuento;
 }
 
-float ProductoNoPerecedero::getPrecio() {
-    return precio;
-}

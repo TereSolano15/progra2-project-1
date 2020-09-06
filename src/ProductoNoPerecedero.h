@@ -22,7 +22,7 @@ public:
 
     void setPorcentajeDeDescuento(float porcentajeDeDescuento);
 
-    float getPrecio();
+
 };
 
 

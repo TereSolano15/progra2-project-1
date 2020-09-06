@@ -8,9 +8,9 @@
 
 class ProductoPerecedero: public Producto{
 private:
-    //hay que poner fecha
+float fechaDeVencimiento;
 public:
-    float getPrecio();
+
 };
 
 
