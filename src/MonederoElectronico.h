@@ -25,6 +25,7 @@ public:
     virtual string toString();
 
     string desgloceVuelto(int);
+
 private:
     int dinero;
 

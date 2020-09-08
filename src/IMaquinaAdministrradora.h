@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class IMaquinaAdministrradora {
+class IMaquinaAdministradora {
 
 public:
 
@@ -26,7 +26,7 @@ public:
     virtual Producto consultar(string id) = 0;
     virtual void addMoney() = 0;
     virtual void drawOutMoney() = 0;
-    virtual ~IMaquinaAdministrradora();
+    virtual ~IMaquinaAdministradora();
 
 
 };

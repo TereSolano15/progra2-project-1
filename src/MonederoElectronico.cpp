@@ -25,8 +25,8 @@ string MonederoElectronico::desgloceVuelto(int monto) {
     int veces[4];
     int cantidad = 4;
     for(int i=0; i<cantidad ; i++){
-        veces[i] = monto/monedas[i];
-        monto = monto%monedas[i];
+        veces[i] = monto / monedas[i];
+        monto = monto % monedas[i];
     }
     for(int i=0; i<cantidad; i++) {
         s<<"Monedas "<<monedas[i]<<" cantidad "<<veces[i]<<endl;
