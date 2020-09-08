@@ -30,5 +30,8 @@ string MonederoElectronico::desgloceVuelto(string &) {
 //método debe seguir el algoritmo voraz (greedy algorithm)
 //para devolver la menor cantidad de monedas cuando se
 //calcula el vuelto. Este método devuelve en texto el detalle completo del desglose.
-
-Los productos tienen precios cerrados con valores definidos entre 200, 300, 700. El cliente normalmente paga con billetes de 2000 o 5000. Por lo que la máquina debe calcular el desgloce en monedas de 100, monedas de 500, billetes de 1000 y billetes de 2000 cuál es la mejor forma de entregar el vuelto al cliente, este detalle es lo que debe devolver el método.
+//Los productos tienen precios cerrados con valores definidos entre
+// 200, 300, 700. El cliente normalmente paga con billetes de 2000 o 5000.
+// Por lo que la máquina debe calcular el desgloce en monedas de 100, monedas de 500,
+// billetes de 1000 y billetes de 2000 cuál es la mejor forma de entregar el vuelto
+// al cliente, este detalle es lo que debe devolver el método.
