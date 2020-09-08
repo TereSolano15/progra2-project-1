@@ -10,13 +10,7 @@
 using namespace std;
 
 class MenuPrincipal {
-    void saltoLinea();
-    void construirLinea();
-    void mostrarMenuPrincipal();
-    void mostrarMenuNaturalezas();
-    void mostrarMenuHabilidades();
-    void mostrarMenuLuchador();
-    void mostrarCreditos();
+
 };
 
 
