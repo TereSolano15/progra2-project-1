@@ -6,17 +6,21 @@
 #define MY_PROJECT_NAME_MENUPRINCIPAL_H
 #include <iostream>
 #include <sstream>
-#include <Windows.h>
+#include "Maquina.h"
+#include "ProductoPerecedero.h"
+#include "ProductoNoPerecedero.h"
+#include "MenuAdministrador.h"
+#include "MenuCobro.h"
 using namespace std;
 
 class MenuPrincipal {
-    void saltoLinea();
-    void construirLinea();
-    void mostrarMenuPrincipal();
-    void mostrarMenuNaturalezas();
-    void mostrarMenuHabilidades();
-    void mostrarMenuLuchador();
-    void mostrarCreditos();
+private:
+    MenuAdministrador* menuAdministrador;
+    MenuCobro* menuCobro;
+public:
+    MenuPrincipal(MenuAdministrador *menuAdministrador, MenuCobro *menuCobro);
+    void mostrar0();
+    int menuPrincip();
 };
 
 
