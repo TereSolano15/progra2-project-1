@@ -5,6 +5,8 @@
 #ifndef MY_PROJECT_NAME_MONEDEROELECTRONICO_H
 #define MY_PROJECT_NAME_MONEDEROELECTRONICO_H
 using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
 #include <sstream>
 #include <iostream>
 
@@ -22,7 +24,7 @@ public:
 
     virtual string toString();
 
-    string desgloceVuelto(string& );
+    string desgloceVuelto(int);
 private:
     int dinero;
 
