@@ -4,10 +4,16 @@
 
 #ifndef MY_PROJECT_NAME_MENUADMINISTRADOR_H
 #define MY_PROJECT_NAME_MENUADMINISTRADOR_H
-
+#include "Maquina.h"
+#include "ProductoPerecedero.h"
+#include "ProductoNoPerecedero.h"
+#include <iostream>
+#include <sstream>
 
 class MenuAdministrador {
+private:
 
+public:
 };
 
 

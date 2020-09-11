@@ -6,9 +6,6 @@
 #define MY_PROJECT_NAME_MENUPRINCIPAL_H
 #include <iostream>
 #include <sstream>
-#include "Maquina.h"
-#include "ProductoPerecedero.h"
-#include "ProductoNoPerecedero.h"
 #include "MenuAdministrador.h"
 #include "MenuCobro.h"
 using namespace std;
