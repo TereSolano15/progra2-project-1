@@ -17,9 +17,9 @@ public:
 
     virtual int getIdentificador() = 0;
     virtual string getNombre() = 0;
-    virtual void setNombre() = 0;
+    virtual void setNombre(string nombre) = 0;
     virtual string toString() = 0;
-    virtual void insert(Producto* producto) = 0;
+    virtual void insert(Producto producto) = 0;
     virtual void addProvisions(string idProducto, int cantidad) = 0;
     virtual void decreaseProvisions(string idProducto, int cantidad) = 0;
     virtual void eliminar(string id) = 0;
