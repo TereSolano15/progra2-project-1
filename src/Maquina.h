@@ -4,6 +4,9 @@
 
 #ifndef MY_PROJECT_NAME_MAQUINA_H
 #define MY_PROJECT_NAME_MAQUINA_H
+#include <sstream>
+#include <conio.h>
+#include <iostream>
 #include <vector>
 #include "IMaquinaAdministrradora.h"
 #include "IMaquinaVendedora.h"
@@ -11,7 +14,7 @@
 
 
 using namespace std;
-class Maquina : public  IMaquinaAdministrradora, IMaquinaVendedora{
+class Maquina : public  IMaquinaAdministradora, IMaquinaVendedora{
 
 private:
 
@@ -31,9 +34,9 @@ public:
     //override of IMaquinaAdministradora
     int getIdentificador() override;
     string getNombre() override;
-    void setNombre() override;
+    void setNombre(string nombre) override;
     string toString() override;
-    void insert(Producto* producto)  override;
+    void insert(Producto producto)  override;
     void addProvisions(string idProducto, int cantidad) override;
     void decreaseProvisions(string idProducto, int cantidad) override;
     void eliminar(string id) override;
