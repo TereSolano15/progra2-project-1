@@ -7,13 +7,13 @@
 *.lo
 *.o
 *.obj
+# Compiled Dynamic libraries
+*.so
 
 # Precompiled Headers
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
-*.so
 *.dylib
 *.dll
 
@@ -36,3 +36,4 @@
 /cmake-build-debug
 /sample
 *.DS_Store
+/lib
