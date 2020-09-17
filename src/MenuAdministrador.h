@@ -12,8 +12,15 @@
 
 class MenuAdministrador {
 private:
-
+Maquina* maquina;
 public:
+    MenuAdministrador();
+
+    MenuAdministrador(Maquina *maquina);
+
+    void mostrar1();
+
+    int menuAdmin();
 };
 
 
