@@ -37,6 +37,11 @@ this->nombre = nombre;
 string Maquina::toString() {
     stringstream s;
 
+    for(int i = 0; i < productoList.size(); i++){
+
+        s<< this->productoList[i].toString()<<endl;
+
+    }
 
     return s.str();
 }
