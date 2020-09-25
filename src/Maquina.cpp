@@ -79,9 +79,9 @@ for(int i=0; i< productoList.size(); i++){
 
         productoList.erase(productoList.begin()+i);
 
-    }
+        }
 
-}
+    }
 
 }
 
