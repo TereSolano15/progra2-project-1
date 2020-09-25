@@ -6,7 +6,8 @@
 
 MenuAdministrador::MenuAdministrador() {}
 
-MenuAdministrador::MenuAdministrador(Maquina *maquina) : maquina(maquina) {}
+MenuAdministrador::MenuAdministrador(Maquina *maquina, const Producto &producto) : maquina(maquina),
+                                                                                   producto(producto) {}
 
 void MenuAdministrador::mostrar1() {
     int opcion = -1;
@@ -15,10 +16,10 @@ void MenuAdministrador::mostrar1() {
         opcion = menuAdmin();
         switch (opcion) {
             case 1:
-                //met11();
+                //
                 break;
             case 2:
-                // met12();
+                //
                 system("pause");
                 break;
             case 3:
@@ -47,3 +48,7 @@ int MenuAdministrador::menuAdmin() {
     cin >> opcion;
     return opcion;
 }
+
+
+
+
