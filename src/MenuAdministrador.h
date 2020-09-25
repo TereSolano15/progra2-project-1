@@ -14,11 +14,11 @@
 class MenuAdministrador {
 private:
 Maquina* maquina;
-Producto producto;
+
 public:
     MenuAdministrador();
 
-    MenuAdministrador(Maquina *maquina, const Producto &producto);
+    MenuAdministrador(Maquina *maquina);
 
     void metInsert();
 

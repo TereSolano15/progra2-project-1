@@ -3,8 +3,8 @@
 //
 
 int main(){
-   Interfaz* app = new Interfaz();
-   app->inicio();
-   delete app;
-   return 0;
+    Interfaz* app = new Interfaz();
+    app->inicio();
+    delete app;
+    return 0;
 }
