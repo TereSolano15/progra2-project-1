@@ -84,12 +84,9 @@ for(int i=0; i< productoList.size(); i++){
 
     if(this->productoList[i].getNombre() == id){
 
-        this->productoList[i].getNombre() = "";
-
-    }-
-
-}
-
+        this->productoList[i].getNombre() == "";
+        }
+    }
 }
 
 Producto Maquina::consultar(string id) {
