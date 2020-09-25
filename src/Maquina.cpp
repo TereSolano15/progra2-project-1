@@ -11,7 +11,8 @@ Maquina::Maquina(int identificador, const string &nombre, Producto *producto, co
 
 Maquina::~Maquina() {
 
-
+    delete producto;
+    delete monederoElectronico;
 
 }
 
@@ -77,7 +78,7 @@ for(int i=0; i< productoList.size(); i++){
     if(this->productoList[i].getNombre() == id){
 
         productoList.erase(productoList.begin()+i);
-.0
+
     }
 
 }
@@ -111,9 +112,12 @@ void Maquina::drawOutMoney() {
 }
 
 string Maquina::realizarCompra(string id, int cantidad, int montoPagar) {
+    stringstream s;
 
+    s<<" Id: "<<producto->getNombre()<<endl;
+    s<<" cantidad: ";
 
-
+    return s.str();
 }
 
 Maquina::Maquina() {}
