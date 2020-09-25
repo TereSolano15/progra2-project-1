@@ -11,12 +11,12 @@ using namespace std;
 class Producto {
 protected:
     string nombre;
-    float precio;
+    int precio;
     int cantidad;
 public:
     Producto();
 
-    Producto(const string &nombre, float precio, int cantidad);
+    Producto(const string &nombre, int precio, int cantidad);
 
     virtual ~Producto();
 
@@ -24,9 +24,9 @@ public:
 
     void setNombre(const string &nombre);
 
-    float getPrecio() const;
+    int getPrecio() const;
 
-    void setPrecio(float precio);
+    void setPrecio(int precio);
 
     int getCantidad() const;
 

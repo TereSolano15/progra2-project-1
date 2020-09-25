@@ -6,7 +6,7 @@
 
 Producto::Producto() {}
 
-Producto::Producto(const string &nombre, float precio, int cantidad) : nombre(nombre), precio(precio),
+Producto::Producto(const string &nombre, int precio, int cantidad) : nombre(nombre), precio(precio),
                                                                        cantidad(cantidad) {}
 
 Producto::~Producto() {
@@ -21,11 +21,11 @@ void Producto::setNombre(const string &nombre) {
     Producto::nombre = nombre;
 }
 
-float Producto::getPrecio() const {
+int Producto::getPrecio() const {
     return precio;
 }
 
-void Producto::setPrecio(float precio) {
+void Producto::setPrecio(int precio) {
     Producto::precio = precio;
 }
 

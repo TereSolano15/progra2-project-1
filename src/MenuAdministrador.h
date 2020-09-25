@@ -20,6 +20,8 @@ public:
 
     MenuAdministrador(Maquina *maquina, const Producto &producto);
 
+    void metInsert();
+
     void mostrar1();
 
     int menuAdmin();
