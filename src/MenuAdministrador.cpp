@@ -16,10 +16,10 @@ void MenuAdministrador::mostrar1() {
         opcion = menuAdmin();
         switch (opcion) {
             case 1:
-                //
+
                 break;
             case 2:
-                //
+
                 system("pause");
                 break;
             case 3:
@@ -49,6 +49,13 @@ int MenuAdministrador::menuAdmin() {
     return opcion;
 }
 
+void MenuAdministrador::metInsert() {
+    string nombre;
 
+    do {
+        cout << "Por favor ingrese el nombre del producto:" << endl;
+
+    }while();
+}
 
 
