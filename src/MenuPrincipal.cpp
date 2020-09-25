@@ -15,7 +15,7 @@ void MenuPrincipal::mostrar0() {
         opcion = menuPrincip();
         switch (opcion) {
             case 1:
-                //met11();
+                menuAdministrador->mostrar1();
                 break;
             case 2:
                // met12();
@@ -38,3 +38,5 @@ int MenuPrincipal::menuPrincip() {
     cin >> opcion;
     return opcion;
 }
+
+MenuPrincipal::MenuPrincipal() {}

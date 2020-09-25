@@ -18,7 +18,7 @@ Maquina* maquina;
 public:
     MenuAdministrador();
 
-    MenuAdministrador(Maquina *maquina, const Producto &producto);
+    MenuAdministrador(Maquina *maquina);
 
     void metInsert();
 

@@ -15,6 +15,8 @@ private:
     MenuAdministrador* menuAdministrador;
     MenuCobro* menuCobro;
 public:
+    MenuPrincipal();
+
     MenuPrincipal(MenuAdministrador *menuAdministrador, MenuCobro *menuCobro);
     void mostrar0();
     int menuPrincip();
