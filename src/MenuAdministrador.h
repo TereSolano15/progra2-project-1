@@ -5,6 +5,7 @@
 #ifndef MY_PROJECT_NAME_MENUADMINISTRADOR_H
 #define MY_PROJECT_NAME_MENUADMINISTRADOR_H
 #include "Maquina.h"
+#include "Producto.h"
 #include "ProductoPerecedero.h"
 #include "ProductoNoPerecedero.h"
 #include <iostream>
@@ -13,10 +14,11 @@
 class MenuAdministrador {
 private:
 Maquina* maquina;
+Producto producto;
 public:
     MenuAdministrador();
 
-    MenuAdministrador(Maquina *maquina);
+    MenuAdministrador(Maquina *maquina, const Producto &producto);
 
     void mostrar1();
 
