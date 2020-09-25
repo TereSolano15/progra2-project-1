@@ -14,7 +14,7 @@
 class MenuAdministrador {
 private:
 Maquina* maquina;
-Producto producto;
+
 public:
     MenuAdministrador();
 

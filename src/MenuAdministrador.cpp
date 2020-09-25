@@ -51,11 +51,27 @@ int MenuAdministrador::menuAdmin() {
 
 void MenuAdministrador::metInsert() {
     string nombre;
-
+    int precio;
+    int cantidad;
+    string ingresa;
+    bool repetir = false;
     do {
         cout << "Por favor ingrese el nombre del producto:" << endl;
+        cin >> nombre;
+        cout << "Por favor ingrese el precio del producto:" << endl;
+        cin >> precio;
+        cout << "Por favor ingrese la cantidad de prodcutos disponibles: " << endl;
+        cin >> cantidad;
 
-    }while();
+        Producto producto(nombre, precio, cantidad);
+        maquina->insert(producto);
+
+        cout << "Quiere ingresar otro producto?(y/n)"<<endl;
+        cin >> ingresa;
+        if (ingresa == "y"){
+            repetir=true;
+        }
+    }while(repetir==true);
 }
 
 
