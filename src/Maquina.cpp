@@ -11,7 +11,7 @@ Maquina::Maquina(int identificador, const string &nombre, Producto *producto, co
 
 Maquina::~Maquina() {
 
-    delete[] productoList;
+
 
 }
 
@@ -52,15 +52,7 @@ void Maquina::addProvisions(string idProducto, int cantidad) {
     p1.setCantidad(cantidad);
     p1.setNombre(idProducto);
 
-   for(int i=0; i< productoList.size(); i++){
-
-       if(productoList[i].getNombre() == "" && productoList[i].getCantidad() == 0){
-
-        insert(p1);
-
-       }
-
-   }
+  insert(p1);
 
 }
 
@@ -84,9 +76,9 @@ for(int i=0; i< productoList.size(); i++){
 
     if(this->productoList[i].getNombre() == id){
 
-        this->productoList[i].getNombre() = "";
-
-    }-
+        productoList.erase(productoList.begin()+i);
+.0
+    }
 
 }
 
