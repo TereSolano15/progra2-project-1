@@ -24,7 +24,7 @@ public:
     virtual void decreaseProvisions(string idProducto, int cantidad) = 0;
     virtual void eliminar(string id) = 0;
     virtual Producto consultar(string id) = 0;
-    virtual void addMoney() = 0;
+    virtual void addMoney(int) = 0;
     virtual void drawOutMoney(int) = 0;
     virtual ~IMaquinaAdministradora();
 

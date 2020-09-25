@@ -41,7 +41,7 @@ public:
     void decreaseProvisions(string idProducto, int cantidad) override;
     void eliminar(string id) override;
     Producto consultar(string id) override;
-    void addMoney() override;
+    void addMoney(int) override;
     void drawOutMoney(int) override;
 
     //override of IMaquinaVendedora

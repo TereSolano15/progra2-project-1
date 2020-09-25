@@ -99,15 +99,15 @@ Producto Maquina::consultar(string id) {
 
 }
 
-void Maquina::addMoney() {
+void Maquina::addMoney(int money) {
 
-
+monederoElectronico->setDinero(monederoElectronico->getDinero() + money);
 
 }
 
-void Maquina::drawOutMoney(int) {
+void Maquina::drawOutMoney(int money) {
 
-
+monederoElectronico->setDinero(monederoElectronico->getDinero() - money);
 
 }
 
