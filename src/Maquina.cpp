@@ -114,8 +114,9 @@ monederoElectronico->setDinero(monederoElectronico->getDinero() - money);
 string Maquina::realizarCompra(string id, int cantidad, int montoPagar) {
     stringstream s;
 
-    s<<" Id: "<<producto->getNombre()<<endl;
-    s<<" cantidad: ";
+    s<<" Id: "<<id<<endl;
+    s<<" cantidad: "<<cantidad<<endl;
+    s<<" monto a pagar: "<< monederoElectronico->getDinero() * cantidad;
 
     return s.str();
 }
