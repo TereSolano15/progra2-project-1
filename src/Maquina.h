@@ -42,7 +42,7 @@ public:
     void eliminar(string id) override;
     Producto consultar(string id) override;
     void addMoney() override;
-    void drawOutMoney() override;
+    void drawOutMoney(int) override;
 
     //override of IMaquinaVendedora
     string realizarCompra(string id, int cantidad, int montoPagar) override;

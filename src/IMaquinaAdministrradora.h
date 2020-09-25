@@ -25,7 +25,7 @@ public:
     virtual void eliminar(string id) = 0;
     virtual Producto consultar(string id) = 0;
     virtual void addMoney() = 0;
-    virtual void drawOutMoney() = 0;
+    virtual void drawOutMoney(int) = 0;
     virtual ~IMaquinaAdministradora();
 
 
