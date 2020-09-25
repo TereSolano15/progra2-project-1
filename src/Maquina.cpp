@@ -105,7 +105,7 @@ void Maquina::addMoney() {
 
 }
 
-void Maquina::drawOutMoney() {
+void Maquina::drawOutMoney(int) {
 
 
 
