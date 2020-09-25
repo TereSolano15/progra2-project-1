@@ -7,9 +7,10 @@
 
 ProductoPerecedero::ProductoPerecedero() {}
 
-ProductoPerecedero::ProductoPerecedero(int dia, int mes, int año) : dia(dia), mes(mes), anno(anno) {}
+ProductoPerecedero::ProductoPerecedero(int dia, int mes, int anno) : dia(dia), mes(mes), anno(anno) {}
 
-ProductoPerecedero::ProductoPerecedero(const string &nombre, float precio, int cantidad, int dia, int mes, int año)
+
+ProductoPerecedero::ProductoPerecedero(const string &nombre, int precio, int cantidad, int dia, int mes, int anno)
         : Producto(nombre, precio, cantidad), dia(dia), mes(mes), anno(anno) {}
 
 int ProductoPerecedero::getDia() const {
@@ -48,3 +49,5 @@ string ProductoPerecedero::toString() {
     output << "la fecha de vencimiento es:" << fechaDeVencimiento() << endl;
     return output.str();
 }
+
+

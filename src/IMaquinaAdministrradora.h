@@ -26,10 +26,10 @@ public:
     virtual Producto consultar(string id) = 0;
     virtual void addMoney(int) = 0;
     virtual void drawOutMoney(int) = 0;
-    virtual ~IMaquinaAdministradora();
 
 
 };
+
 
 
 #endif //MY_PROJECT_NAME_IMAQUINAADMINISTRRADORA_H

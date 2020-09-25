@@ -14,9 +14,10 @@ private:
 public:
     ProductoPerecedero();
 
+    ProductoPerecedero(const string &nombre, int precio, int cantidad, int dia, int mes, int anno);
+
     ProductoPerecedero(int dia, int mes, int anno);
 
-    ProductoPerecedero(const string &nombre, int precio, int cantidad, int dia, int mes, int anno);
 
     int getDia() const;
 

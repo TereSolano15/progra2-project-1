@@ -33,3 +33,8 @@ string MonederoElectronico::desgloceVuelto(int monto) {
     }
     return s.str();
 }
+string MonederoElectronico::toString() {
+    stringstream s;
+    s<<"Cantidad de dinero: "<<getDinero()<<endl;
+    return s.str();
+}
