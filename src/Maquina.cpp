@@ -168,15 +168,15 @@ string Maquina::realizarCompra(string id, int cantidad, int montoPagar) {
 
     if(p1 == nullptr){
 
-        throw invalid_argument("El producto no existe");
+        output<<"El producto no existe" <<endl;
 
     } else if((p1->getCantidad() < cantidad)){
 
-        throw invalid_argument("No hay suficientes productos");
+        output<<"No hay suficientes productos";
 
     }  else if(montoPagar < (p1->getPrecio() * cantidad)){
 
-        throw invalid_argument("No tiene suficiente saldo para pagar");
+        output<<"No tiene suficiente saldo para pagar";
 
     } else if(montoPagar == 2000 || montoPagar == 5000){
 

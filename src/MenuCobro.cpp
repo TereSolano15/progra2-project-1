@@ -12,26 +12,27 @@ void MenuCobro::metSelectProduct() {
     string nombre;
     int cantidad;
     int money;
-    string confirmar;
-    bool verificar = false;
-    cout << "Seleccione un producto a comprar: "<<endl;
-    cin >> nombre;
-    maquina->consultar(nombre);
-
-    cout << "Desea continuar?(y/n)"<<endl;
-    cin >> confirmar;
-    if(confirmar == "y"){
-        verificar=true;
-    }
-
-    while(verificar == true) {
-        cout << "Ya que ha querido continuar, por favor ingrese la cantidad de producto que va a querer: " << endl;
+    string verificar;
+    do {
+        cout << "Seleccione un producto a comprar: " << endl;
+        cin >> nombre;
+        cout << "Ingrese la cantidad de producto que va a querer: " << endl;
         cin >> cantidad;
-        cout <<"Ingrese la cantidad de dinero con el que va a pagar:"<<endl;
+        cout << "Ingrese la cantidad de dinero con el que va a pagar: (2000/5000)" << endl;
         cin >> money;
 
-        maquina->realizarCompra(nombre, cantidad, money);
-    }
+        verificar = maquina->realizarCompra(nombre, cantidad, money);
+        if(verificar == "El producto no existe"){
+            cout << "El producto no existe, ingrese un valor valido" << endl;
+        }else if(verificar == "No hay suficientes productos"){
+            cout << "La cantidad de productos es menor a la solicitada, ingrese un valor valido" << endl;
+        }else if(verificar == "No tiene suficiente saldo para pagar"){
+            cout << "No cuenta con suficiente saldo para pagar, ingrese un valor valido" << endl;
+        }else{
+            cout << verificar << endl;
+        }
+
+    }while(verificar != "El producto no existe" && verificar != "No hay suficientes productos" && verificar != "No tiene suficiente saldo para pagar");
 }
 
 void MenuCobro::mostrar2() {
