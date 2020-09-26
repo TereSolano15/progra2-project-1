@@ -32,7 +32,8 @@ void MenuAdministrador::mostrar1() {
                 system("cls");
                 break;
             case 2:
-
+                metModificar();
+                system("cls");
                 break;
             case 3:
                 metBorrar();
@@ -82,6 +83,27 @@ void MenuAdministrador::metInsert() {
 }
 
 void MenuAdministrador::metModificar() {
+    string nombre;
+    string modificar;
+    int cantidad;
+    cout << "Ingrese el producto que quiere modificar: "<<endl;
+    cin >> nombre;
+
+    do {
+        cout << "Desea agregar o disminuir provisiones de este producto? (add/rest)" << endl;
+        cin >> modificar;
+        if (modificar == "add") {
+            cout << "Ingrese la cantidad que quiere agregar del producto: " << endl;
+            cin >> cantidad;
+            maquina->addProvisions(nombre, cantidad);
+        }else if(modificar == "rest"){
+            cout << "Ingrese la cantidad que quiere disminuir del producto: " << endl;
+            cin >> cantidad;
+            maquina->decreaseProvisions(nombre, cantidad);
+        } else{
+            cout << "Ingrese una palabra valida" << endl;
+        }
+    }while(modificar != "add" && modificar != "rest");
 
 }
 
