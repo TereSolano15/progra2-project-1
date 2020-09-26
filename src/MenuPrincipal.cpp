@@ -18,7 +18,7 @@ void MenuPrincipal::mostrar0() {
                 menuAdministrador->mostrar1();
                 break;
             case 2:
-               // met12();
+               menuCobro->mostrar2();
                 system("pause");
                 break;
             case 3:
