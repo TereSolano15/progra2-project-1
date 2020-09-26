@@ -9,38 +9,29 @@ MenuCobro::MenuCobro() {}
 MenuCobro::MenuCobro(MonederoElectronico *monedero, Maquina *maquina) : monedero(monedero), maquina(maquina) {}
 
 void MenuCobro::metSelectProduct() {
+    string nombre;
+    int cantidad;
+    int money;
+    string confirmar;
+    bool verificar = false;
+    cout << "Seleccione un producto a comprar: "<<endl;
+    cin >> nombre;
+    maquina->consultar(nombre);
 
-}
+    cout << "Desea continuar?(y/n)"<<endl;
+    cin >> confirmar;
+    if(confirmar == "y"){
+        verificar=true;
+    }
 
-void MenuCobro::subMetSelectProduct() {
+    while(verificar == true) {
+        cout << "Ya que ha querido continuar, por favor ingrese la cantidad de producto que va a querer: " << endl;
+        cin >> cantidad;
+        cout <<"Ingrese la cantidad de dinero con el que va a pagar:"<<endl;
+        cin >> money;
 
-}
-
-void MenuCobro::mostrar2_0() {
-    int opcion = -1;
-    do {
-        system("cls");
-        opcion = subMenuCobro();
-        switch (opcion) {
-            case 1:
-                subMetSelectProduct();
-                system("pause");
-                break;
-            case 2:
-                break;
-            default:
-                cout << "Opcion invalida" << endl;
-        }
-    } while (opcion < 2 && opcion > 0);
-}
-
-int MenuCobro::subMenuCobro() {
-    int opcion;
-    cout << "Ha seleccionado un producto, desea continuar:" << endl;
-    cout << "1) Si" << endl;
-    cout << "2) No, regresar al menu anterior" << endl;
-    cin >> opcion;
-    return opcion;
+        maquina->realizarCompra(nombre, cantidad, money);
+    }
 }
 
 void MenuCobro::mostrar2() {
@@ -50,7 +41,7 @@ void MenuCobro::mostrar2() {
         opcion = menuCobro();
         switch (opcion) {
             case 1:
-                //met11();
+                maquina->toString();
                 break;
             case 2:
                 metSelectProduct();
