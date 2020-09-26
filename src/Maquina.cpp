@@ -162,7 +162,6 @@ string Maquina::realizarCompra(string id, int cantidad, int montoPagar) {
 
     stringstream output;
 
-
     Producto* p1  = consultar(id);
 
     int vueltoAux = 0;
