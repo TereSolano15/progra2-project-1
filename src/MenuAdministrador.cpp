@@ -18,8 +18,7 @@ void MenuAdministrador::mostrar1() {
                 metInsert();
                 break;
             case 2:
-
-                system("pause");
+                metBorrar();
                 break;
             case 3:
                 break;
@@ -64,7 +63,7 @@ void MenuAdministrador::metInsert() {
 
         Producto producto(nombre, precio, cantidad);
         maquina->insert(producto);
-
+        cout << "El elemento ha sido ingresado correctamente"<<endl;
         cout << "Quiere ingresar otro producto?(y/n)"<<endl;
         cin >> ingresa;
         if (ingresa == "y"){
@@ -73,4 +72,15 @@ void MenuAdministrador::metInsert() {
     }while(repetir==true);
 }
 
+void MenuAdministrador::metModificar() {
+
+}
+
+void MenuAdministrador::metBorrar() {
+    string nombre;
+    cout << "Ingrese el nombre del rpodructo que quiere eliminar: " <<endl;
+    cin >> nombre;
+    maquina->eliminar(nombre);
+    cout<<"El elemento ha sido eliminado correctamente" <<endl;
+}
 

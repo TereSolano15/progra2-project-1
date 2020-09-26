@@ -22,6 +22,10 @@ public:
 
     void metInsert();
 
+    void metModificar();
+
+    void metBorrar();
+
     void mostrar1();
 
     int menuAdmin();
