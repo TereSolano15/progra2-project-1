@@ -4,10 +4,6 @@
 
 #include "Maquina.h"
 
-Maquina::Maquina(int identificador, const string &nombre, Producto *producto, const vector<Producto> &productoList,
-                 MonederoElectronico *monederoElectronico) : identificador(identificador), nombre(nombre),
-                                                             producto(producto), productoList(productoList),
-                                                             monederoElectronico(monederoElectronico) {}
 
 Maquina::~Maquina() {
 
@@ -39,14 +35,14 @@ string Maquina::toString() {
 
     for(int i = 0; i < productoList.size(); i++){
 
-        s<< this->productoList[i].toString()<<endl;
+        s<< this->productoList[i]->toString()<<endl;
 
     }
 
     return s.str();
 }
 
-void Maquina::insert(Producto producto) {
+void Maquina::insert(Producto* producto) {
 
 productoList.push_back(producto);
 
@@ -54,11 +50,29 @@ productoList.push_back(producto);
 
 void Maquina::addProvisions(string idProducto, int cantidad) {
 
-    Producto p1;
-    p1.setCantidad(cantidad);
-    p1.setNombre(idProducto);
+    Producto* p1;
 
-  insert(p1);
+    for(int i=0; i < productoList.size(); i++){
+
+        if(productoList[i]->getNombre() == idProducto){
+
+            if(producto->getCantidad() < cantidad){
+
+                throw invalid_argument("la cantidad ingresada es mayor a la que esta en el inventario");
+
+            }else{
+
+                p1->setCantidad(cantidad);
+                p1->setNombre(idProducto);
+                insert(p1);
+
+            }
+
+        }
+
+    }
+
+
 
 }
 
@@ -66,9 +80,9 @@ void Maquina::decreaseProvisions(string idProducto, int cantidad) {
 
     for(int i=0; i< productoList.size(); i++){
 
-        if(productoList[i].getNombre() == idProducto){
+        if(productoList[i]->getNombre() == idProducto){
 
-           productoList[i].setCantidad(cantidad);
+           productoList[i]->setCantidad(producto->getCantidad() - cantidad);
 
         }
 
@@ -80,7 +94,7 @@ void Maquina::eliminar(string id) {
 
 for(int i=0; i< productoList.size(); i++){
 
-    if(this->productoList[i].getNombre() == id){
+    if(this->productoList[i]->getNombre() == id){
 
         productoList.erase(productoList.begin()+i);
 
@@ -94,9 +108,9 @@ Producto Maquina::consultar(string id) {
 
     for(int i=0; i< productoList.size(); i++){
 
-        if(productoList[i].getNombre() == id){
+        if(productoList[i]->getNombre() == id){
 
-        return this->productoList[i];
+        return *productoList[i];
 
         }
 
@@ -106,24 +120,43 @@ Producto Maquina::consultar(string id) {
 
 void Maquina::addMoney(int money) {
 
-monederoElectronico->setDinero(monederoElectronico->getDinero() + money);
+    if(money >= 0){
+
+        this->monederoElectronico->setDinero(money);
+
+    } else{
+
+        throw invalid_argument("la cantidad ingresada tiene que ser mayor a 0.00");
+
+    }
 
 }
 
 void Maquina::drawOutMoney(int money) {
 
-monederoElectronico->setDinero(monederoElectronico->getDinero() - money);
+    if(money <= monederoElectronico->getDinero()){
+
+        monederoElectronico->setDinero(monederoElectronico->getDinero() - money);
+
+    }else{
+
+        throw invalid_argument("No hay suficiente saldo para retirar la cantidad ingresada");
+
+    }
 
 }
 
 string Maquina::realizarCompra(string id, int cantidad, int montoPagar) {
     stringstream s;
 
-    s<<" Id: "<<id<<endl;
-    s<<" cantidad: "<<cantidad<<endl;
-    s<<" monto a pagar: "<< monederoElectronico->getDinero() * cantidad;
+
 
     return s.str();
 }
+
+Maquina::Maquina(int identificador, const string &nombre, Producto *producto, const vector<Producto *> &productoList,
+                 MonederoElectronico *monederoElectronico) : identificador(identificador), nombre(nombre),
+                                                             producto(producto), productoList(productoList),
+                                                             monederoElectronico(monederoElectronico) {}
 
 Maquina::Maquina() = default;

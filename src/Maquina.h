@@ -21,12 +21,12 @@ private:
     int identificador{};
     string nombre;
     Producto* producto{};
-    vector<Producto> productoList;
+    vector<Producto*> productoList;
     MonederoElectronico* monederoElectronico{};
 
 public:
 
-    Maquina(int identificador, const string &nombre, Producto *producto, const vector<Producto> &productoList,
+    Maquina(int identificador, const string &nombre, Producto *producto, const vector<Producto *> &productoList,
             MonederoElectronico *monederoElectronico);
 
     Maquina();
@@ -36,7 +36,7 @@ public:
     string getNombre() override;
     void setNombre(string nombre) override;
     string toString() override;
-    void insert(Producto producto)  override;
+    void insert(Producto* producto)  override;
     void addProvisions(string idProducto, int cantidad) override;
     void decreaseProvisions(string idProducto, int cantidad) override;
     void eliminar(string id) override;
