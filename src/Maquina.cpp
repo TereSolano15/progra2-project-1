@@ -160,11 +160,15 @@ void Maquina::drawOutMoney(int money) {
 
 string Maquina::realizarCompra(string id, int cantidad, int montoPagar) {
 
-    stringstream s;
-
-
-
-    return s.str();
+    stringstream output;
+    if(cantidad<=producto->getCantidad()) {
+        if(montoPagar>=producto->getPrecio()) {
+            output << "El producto que usted compro es: " << id << endl;
+            output << "La cantidad de productos que usted compro es: " << cantidad << endl;
+            output << "Su vuelto esta dado por: " << monederoElectronico->desgloceVuelto(montoPagar) << endl;
+        }
+    }
+    return output.str();
 }
 
 Maquina::Maquina(int identificador, const string &nombre, Producto *producto, const vector<Producto *> &productoList,
