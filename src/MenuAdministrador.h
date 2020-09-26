@@ -24,6 +24,10 @@ public:
 
     void metModificar();
 
+    void metAddMoney();
+
+    void metDrawoutMoney();
+
     void metBorrar();
 
     void mostrar1();

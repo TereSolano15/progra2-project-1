@@ -18,13 +18,16 @@ void MenuAdministrador::mostrar1() {
                 metInsert();
                 break;
             case 2:
-                metBorrar();
+
                 break;
             case 3:
+                metBorrar();
                 break;
             case 4:
+                metAddMoney();
                 break;
             case 5:
+                metDrawoutMoney();
                 break;
             case 6:
                 break;
@@ -70,6 +73,7 @@ void MenuAdministrador::metInsert() {
             repetir=true;
         }
     }while(repetir==true);
+    system("pause");
 }
 
 void MenuAdministrador::metModificar() {
@@ -82,5 +86,21 @@ void MenuAdministrador::metBorrar() {
     cin >> nombre;
     maquina->eliminar(nombre);
     cout<<"El elemento ha sido eliminado correctamente" <<endl;
+    system("pause");
 }
 
+void MenuAdministrador::metAddMoney() {
+    int money;
+    cout << "Ingrese la cantidad de dinero que se ingresra a la maquina: "<< endl;
+    maquina->addMoney(money);
+    cout << "El dinero ha sido ingresado satisfactoriamente"<<endl;
+    system("pause");
+}
+
+void MenuAdministrador::metDrawoutMoney() {
+    int money;
+    cout << "Ingrese la cantidad de dinero que se retirara de la maquina: "<< endl;
+    maquina->drawOutMoney(money);
+    cout << "El dinero ha sido retirado satisfactoriamente"<<endl;
+    system("pause");
+}
