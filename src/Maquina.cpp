@@ -161,13 +161,37 @@ void Maquina::drawOutMoney(int money) {
 string Maquina::realizarCompra(string id, int cantidad, int montoPagar) {
 
     stringstream output;
-    if(cantidad<=producto->getCantidad()) {
-        if(montoPagar>=producto->getPrecio()) {
-            output << "El producto que usted compro es: " << id << endl;
-            output << "La cantidad de productos que usted compro es: " << cantidad << endl;
-            output << "Su vuelto esta dado por: " << monederoElectronico->desgloceVuelto(montoPagar) << endl;
-        }
+
+
+    Producto* p1  = consultar(id);
+
+    int vueltoAux = 0;
+
+    if(p1 == nullptr){
+
+        throw invalid_argument("El producto no existe");
+
+    } else if((p1->getCantidad() < cantidad)){
+
+        throw invalid_argument("No hay suficientes productos");
+
+    }  else if(montoPagar < (p1->getPrecio() * cantidad)){
+
+        throw invalid_argument("No tiene suficiente saldo para pagar");
+
+    } else if(montoPagar == 2000 || montoPagar == 5000){
+
+        vueltoAux = montoPagar - (p1->getPrecio() * cantidad);
+
+        monederoElectronico->setDinero(p1->getPrecio() * cantidad);
+
+        decreaseProvisions(id, cantidad);
+
+        output<<"Nombre del producto comprado"<< p1->getNombre() <<endl;
+        output<<monederoElectronico->desgloceVuelto(vueltoAux);
+
     }
+
     return output.str();
 }
 

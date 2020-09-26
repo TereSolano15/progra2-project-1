@@ -18,7 +18,7 @@ void MonederoElectronico::setDinero(int monto) {
 }
 
 string MonederoElectronico::desgloceVuelto(int monto) {
-    stringstream s;
+    stringstream output;
     int monedas[] = {100,500,1000,2000};
     int veces[4];
     int cantidad = 4;
@@ -27,9 +27,9 @@ string MonederoElectronico::desgloceVuelto(int monto) {
         monto = monto % monedas[i];
     }
     for(int i=0; i<cantidad; i++) {
-        s<<"Monedas "<<monedas[i]<<" cantidad "<<veces[i]<<endl;
+        output<<"Monedas "<<monedas[i]<<" cantidad "<<veces[i]<<endl;
     }
-    return s.str();
+    return output.str();
 }
 string MonederoElectronico::toString() {
     stringstream s;
