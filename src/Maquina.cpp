@@ -78,15 +78,27 @@ void Maquina::addProvisions(string idProducto, int cantidad) {
 
 void Maquina::decreaseProvisions(string idProducto, int cantidad) {
 
-    for(int i=0; i< productoList.size(); i++){
 
-        if(productoList[i]->getNombre() == idProducto){
 
-           productoList[i]->setCantidad(producto->getCantidad() - cantidad);
+    if(consultar(idProducto) != nullptr) {
+
+        Producto* p1 = consultar(idProducto);
+
+        if (p1->getCantidad() < cantidad) {
+
+            p1->setCantidad(p1->getCantidad() - p1->getCantidad());
+            throw invalid_argument(
+                    "hay menos unidades del productos ingresados, se disminuyo la cantidad de productos");
+
+        } else {
+
+            p1->setCantidad(p1->getCantidad()- cantidad);
 
         }
 
     }
+
+    throw invalid_argument("El producto a buscar no fue encontrado");
 
 }
 
@@ -104,13 +116,13 @@ for(int i=0; i< productoList.size(); i++){
 
 }
 
-Producto Maquina::consultar(string id) {
+Producto* Maquina::consultar(string id) {
 
     for(int i=0; i< productoList.size(); i++){
 
         if(productoList[i]->getNombre() == id){
 
-        return *productoList[i];
+        return productoList[i];
 
         }
 
@@ -147,6 +159,7 @@ void Maquina::drawOutMoney(int money) {
 }
 
 string Maquina::realizarCompra(string id, int cantidad, int montoPagar) {
+
     stringstream s;
 
 
