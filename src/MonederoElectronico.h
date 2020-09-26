@@ -4,11 +4,11 @@
 
 #ifndef MY_PROJECT_NAME_MONEDEROELECTRONICO_H
 #define MY_PROJECT_NAME_MONEDEROELECTRONICO_H
-using namespace std;
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include <sstream>
 #include <iostream>
+using namespace std;
 
 class MonederoElectronico {
 public:
@@ -27,7 +27,7 @@ public:
     string desgloceVuelto(int);
 
 private:
-    int dinero;
+    int dinero{};
 
 };
 

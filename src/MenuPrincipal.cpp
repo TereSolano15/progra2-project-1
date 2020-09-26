@@ -9,7 +9,7 @@ MenuPrincipal::MenuPrincipal(MenuAdministrador *menuAdministrador, MenuCobro *me
 
 
 void MenuPrincipal::mostrar0() {
-    int opcion = -1;
+    int opcion;
     do {
         system("cls");
         opcion = menuPrincip();

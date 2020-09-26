@@ -8,35 +8,6 @@ MenuAdministrador::MenuAdministrador() {}
 
 MenuAdministrador::MenuAdministrador(Maquina *maquina) : maquina(maquina) {}
 
-void MenuAdministrador::mostrar1() {
-    int opcion = -1;
-    do {
-        system("cls");
-        opcion = menuAdmin();
-        switch (opcion) {
-            case 1:
-                metInsert();
-                break;
-            case 2:
-
-                break;
-            case 3:
-                metBorrar();
-                break;
-            case 4:
-                metAddMoney();
-                break;
-            case 5:
-                metDrawoutMoney();
-                break;
-            case 6:
-                break;
-            default:
-                cout << "Opcion invalida" << endl;
-        }
-    } while (opcion < 6 && opcion > 0);
-}
-
 int MenuAdministrador::menuAdmin() {
     int opcion;
     cout << "Esta en el menu de Administrador, elija una opcion:" << endl;
@@ -49,6 +20,40 @@ int MenuAdministrador::menuAdmin() {
     cin >> opcion;
     return opcion;
 }
+
+void MenuAdministrador::mostrar1() {
+    int opcion ;
+    do {
+        system("cls");
+       opcion = menuAdmin();
+        switch (opcion) {
+            case 1:
+                metInsert();
+                system("cls");
+                break;
+            case 2:
+
+                break;
+            case 3:
+                metBorrar();
+                system("cls");
+                break;
+            case 4:
+                metAddMoney();
+                system("cls");
+                break;
+            case 5:
+                metDrawoutMoney();
+                system("cls");
+                break;
+            case 6:
+                break;
+            default:
+                cout << "Opcion invalida" << endl;
+        }
+    } while (opcion < 6 && opcion > 0);
+}
+
 
 void MenuAdministrador::metInsert() {
     string nombre;
@@ -90,8 +95,9 @@ void MenuAdministrador::metBorrar() {
 }
 
 void MenuAdministrador::metAddMoney() {
-    int money;
-    cout << "Ingrese la cantidad de dinero que se ingresra a la maquina: "<< endl;
+    int money = 0;
+    cout << "Ingrese la cantidad de dinero que se ingresara a la maquina: "<< endl;
+    cin>>money;
     maquina->addMoney(money);
     cout << "El dinero ha sido ingresado satisfactoriamente"<<endl;
     system("pause");
@@ -100,6 +106,7 @@ void MenuAdministrador::metAddMoney() {
 void MenuAdministrador::metDrawoutMoney() {
     int money;
     cout << "Ingrese la cantidad de dinero que se retirara de la maquina: "<< endl;
+    cin>>money;
     maquina->drawOutMoney(money);
     cout << "El dinero ha sido retirado satisfactoriamente"<<endl;
     system("pause");

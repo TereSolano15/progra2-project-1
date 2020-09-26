@@ -64,3 +64,12 @@ int MenuCobro::menuCobro() {
     cin >> opcion;
     return opcion;
 }
+void MenuCobro::subMetSelectProduct(){
+
+}
+void MenuCobro::mostrar2_0(){
+
+}
+int MenuCobro::subMenuCobro(){
+return 0;
+}

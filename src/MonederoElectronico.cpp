@@ -1,22 +1,20 @@
 //
 // Created by Fabio Villalobos on 25/8/2020.
 //
-
 #include "MonederoElectronico.h"
-MonederoElectronico::MonederoElectronico() {}
 
-MonederoElectronico::MonederoElectronico(int dinero) : dinero(dinero) {}
+MonederoElectronico::MonederoElectronico() = default;
 
-MonederoElectronico::~MonederoElectronico() {
+MonederoElectronico::MonederoElectronico(int _dinero) : dinero(_dinero) {}
 
-}
+MonederoElectronico::~MonederoElectronico() = default;
 
 int MonederoElectronico::getDinero() const {
     return dinero;
 }
 
-void MonederoElectronico::setDinero(int dinero) {
-    MonederoElectronico::dinero = dinero;
+void MonederoElectronico::setDinero(int monto) {
+    MonederoElectronico::dinero = monto;
 }
 
 string MonederoElectronico::desgloceVuelto(int monto) {

@@ -126,4 +126,4 @@ string Maquina::realizarCompra(string id, int cantidad, int montoPagar) {
     return s.str();
 }
 
-Maquina::Maquina() {}
+Maquina::Maquina() = default;

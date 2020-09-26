@@ -24,7 +24,7 @@ public:
 
     void mostrar2_0();
 
-    int menuCobro();
+    static int menuCobro();
 
     int subMenuCobro();
 
