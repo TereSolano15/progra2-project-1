@@ -22,15 +22,11 @@ public:
 
     void mostrar2();
 
-    void mostrar2_0();
 
     static int menuCobro();
 
-    int subMenuCobro();
-
     void metSelectProduct();
 
-    void subMetSelectProduct();
 };
 
 

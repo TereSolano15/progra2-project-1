@@ -45,7 +45,6 @@ void MenuCobro::mostrar2() {
                 break;
             case 2:
                 metSelectProduct();
-                mostrar2_0();
                 break;
             case 3:
                 break;
@@ -63,13 +62,4 @@ int MenuCobro::menuCobro() {
     cout << "3) Regresar al menu principal" << endl;
     cin >> opcion;
     return opcion;
-}
-void MenuCobro::subMetSelectProduct(){
-
-}
-void MenuCobro::mostrar2_0(){
-
-}
-int MenuCobro::subMenuCobro(){
-return 0;
 }
