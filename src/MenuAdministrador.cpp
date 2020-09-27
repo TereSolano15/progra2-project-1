@@ -103,14 +103,16 @@ void MenuAdministrador::metInsert() {
                 cout << "Por favor ingrese un valor valido" << endl;
             }
         }while (tipoProducto != "pp" && tipoProducto != "pnp");
-        cout << "El elemento ha sido ingresado correctamente"<<endl;
-        cout << "Quiere ingresar otro producto?(y/n)"<<endl;
-        cin >> ingresa;
-        if (ingresa == "y"){
-            repetir=true;
-        }else if(ingresa == "n"){
-            repetir = false;
-        }
+        do {
+            cout << "El elemento ha sido ingresado correctamente" << endl;
+            cout << "Quiere ingresar otro producto?(y/n)" << endl;
+            cin >> ingresa;
+            if (ingresa == "y") {
+                repetir = true;
+            } else if (ingresa == "n") {
+                repetir = false;
+            }
+        }while(ingresa != "y" && ingresa != "n");
     }while(repetir==true);
     system("pause");
 }
