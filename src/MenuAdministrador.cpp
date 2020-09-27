@@ -69,52 +69,41 @@ void MenuAdministrador::metInsert() {
     Maquina maquina;
     bool repetir = false;
     do {
-        do {
-            cout << "Desea ingresar un producto perecedero o no perecedero?(pp/pnp)" << endl;
-            cin >> tipoProducto;
-            if (tipoProducto == "pp") {
-                cout << "Por favor ingrese el nombre del producto:" << endl;
-                cin >> nombre;
-                cout << "Por favor ingrese el precio del producto:" << endl;
-                cin >> precio;
-                cout << "Por favor ingrese la cantidad de prodcutos disponibles: " << endl;
-                cin >> cantidad;
-                cout << "Por favor ingrese el año que caduca: " << endl;
-                cin >> anno;
-                cout << "Por favor ingrese el mes que caduca: " << endl;
-                cin >> mes;
-                cout << "Por favor ingrese el dia que caduca: " << endl;
-                cin >> dia;
+        cout << "Desea ingresar un producto perecedero o no perecedero?(pp/pnp)" << endl;
+        cin >> tipoProducto;
+        if (tipoProducto == "pp") {
+            cout << "Por favor ingrese el nombre del producto:" << endl;
+            cin >> nombre;
+            cout << "Por favor ingrese el precio del producto:" << endl;
+            cin >> precio;
+            cout << "Por favor ingrese la cantidad de prodcutos disponibles: " << endl;
+            cin >> cantidad;
+            cout << "Por favor ingrese el año que caduca: " << endl;
+            cin >> anno;
+            cout << "Por favor ingrese el mes que caduca: " << endl;
+            cin >> mes;
+            cout << "Por favor ingrese el dia que caduca: " << endl;
+            cin >> dia;
 
-                Producto *producto1 = new ProductoPerecedero(nombre, precio, cantidad, dia, mes, anno);
-                maquina.insert(producto1);
-            } else if (tipoProducto == "pnp") {
-                cout << "Por favor ingrese el nombre del producto:" << endl;
-                cin >> nombre;
-                cout << "Por favor ingrese el precio del producto:" << endl;
-                cin >> precio;
-                cout << "Por favor ingrese la cantidad de prodcutos disponibles: " << endl;
-                cin >> cantidad;
-                cout << "Por favor ingrese el procentaje de descuento que tendra el producto: " << endl;
-                cin >> porcentajeDeDescuento;
-                Producto *producto2 = new ProductoNoPerecedero(nombre, precio, cantidad, porcentajeDeDescuento);
-                maquina.insert(producto2);
-            } else {
-                cout << "Por favor ingrese un valor valido" << endl;
-            }
-        }while (tipoProducto != "pp" && tipoProducto != "pnp");
-        do {
-            cout << "El elemento ha sido ingresado correctamente" << endl;
-            cout << "Quiere ingresar otro producto?(y/n)" << endl;
-            cin >> ingresa;
-            if (ingresa == "y") {
-                repetir = true;
-            } else if (ingresa == "n") {
-                repetir = false;
-            }
-        }while(ingresa != "y" && ingresa != "n");
-    }while(repetir==true);
-    system("pause");
+            Producto *producto1 = new ProductoPerecedero(nombre, precio, cantidad, dia, mes, anno);
+            maquina.insert(producto1);
+            cout<<"El poducto ha sido agregado con exito"<< endl;
+        } else if (tipoProducto == "pnp") {
+            cout << "Por favor ingrese el nombre del producto:" << endl;
+            cin >> nombre;
+            cout << "Por favor ingrese el precio del producto:" << endl;
+            cin >> precio;
+            cout << "Por favor ingrese la cantidad de prodcutos disponibles: " << endl;
+            cin >> cantidad;
+            cout << "Por favor ingrese el procentaje de descuento que tendra el producto: " << endl;
+            cin >> porcentajeDeDescuento;
+            Producto *producto2 = new ProductoNoPerecedero(nombre, precio, cantidad, porcentajeDeDescuento);
+            maquina.insert(producto2);
+            cout<<"El poducto ha sido agregado con exito"<< endl;
+        } else {
+            cout << "Por favor ingrese un valor valido" << endl;
+        }
+    } while (tipoProducto != "pp" && tipoProducto != "pnp");
 }
 
 void MenuAdministrador::metModificar() {

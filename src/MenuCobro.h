@@ -14,11 +14,11 @@
 class MenuCobro {
 private:
     MonederoElectronico* monedero;
-    Maquina maquina;
+
 public:
     MenuCobro();
 
-    MenuCobro(MonederoElectronico *monedero, Maquina maquina);
+    MenuCobro(MonederoElectronico *monedero);
 
     void mostrar2();
 

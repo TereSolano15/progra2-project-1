@@ -7,8 +7,8 @@
 
 Maquina::~Maquina() {
 
-    delete producto;
-    delete monederoElectronico;
+    //delete producto;
+   // delete monederoElectronico;
 
 }
 
@@ -42,10 +42,10 @@ string Maquina::toString() {
     return s.str();
 }
 
-string Maquina::insert(Producto* producto) {
+void Maquina::insert(Producto* producto) {
 
-//productoList.push_back(producto);
- return "Agregado";
+productoList.push_back(producto);
+
 }
 
 void Maquina::addProvisions(string idProducto, int cantidad) {

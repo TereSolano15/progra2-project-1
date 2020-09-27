@@ -6,9 +6,10 @@
 
 MenuCobro::MenuCobro() {}
 
-MenuCobro::MenuCobro(MonederoElectronico *monedero, Maquina maquina) : monedero(monedero), maquina(maquina) {}
+MenuCobro::MenuCobro(MonederoElectronico *monedero) : monedero(monedero) {}
 
 void MenuCobro::metSelectProduct() {
+    Maquina maquina;
     string nombre;
     int cantidad;
     int money;
@@ -36,13 +37,15 @@ void MenuCobro::metSelectProduct() {
 }
 
 void MenuCobro::mostrar2() {
+    Maquina maquina;
     int opcion = -1;
     do {
         system("cls");
         opcion = menuCobro();
         switch (opcion) {
             case 1:
-                maquina.toString();
+                cout << maquina.toString();
+                system("pause");
                 break;
             case 2:
                 metSelectProduct();

@@ -36,7 +36,7 @@ public:
     string getNombre() override;
     void setNombre(string nombre) override;
     string toString() override;
-    string insert(Producto* producto)  override;
+    void insert(Producto* producto)  override;
     void addProvisions(string idProducto, int cantidad) override;
     void decreaseProvisions(string idProducto, int cantidad) override;
     void eliminar(string id) override;
