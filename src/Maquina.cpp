@@ -50,13 +50,13 @@ productoList.push_back(producto);
 
 void Maquina::addProvisions(string idProducto, int cantidad) {
 
-    Producto* p1;
+    Producto* p1= consultar(idProducto);
 
     for(int i=0; i < productoList.size(); i++){
 
-        if(productoList[i]->getNombre() == idProducto){
+        if(p1->getNombre() == idProducto){
 
-            if(producto->getCantidad() < cantidad){
+            if(p1->getCantidad() < cantidad){
 
                 throw invalid_argument("la cantidad ingresada es mayor a la que esta en el inventario");
 
