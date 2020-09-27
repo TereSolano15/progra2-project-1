@@ -31,7 +31,7 @@ public:
 
     Maquina();
 
-    //override of IMaquinaAdministradora
+   // override of IMaquinaAdministradora
     int getIdentificador() override;
     string getNombre() override;
     void setNombre(string nombre) override;
