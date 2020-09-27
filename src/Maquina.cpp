@@ -63,8 +63,6 @@ void Maquina::addProvisions(string idProducto, int cantidad) {
             }else{
 
                 p1->setCantidad(cantidad);
-                p1->setNombre(idProducto);
-                insert(p1);
 
             }
 
