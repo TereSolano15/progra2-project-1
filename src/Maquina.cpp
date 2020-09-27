@@ -44,7 +44,7 @@ string Maquina::toString() {
 
 string Maquina::insert(Producto* producto) {
 
-productoList.push_back(producto);
+//productoList.push_back(producto);
  return "Agregado";
 }
 

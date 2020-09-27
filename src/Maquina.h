@@ -18,11 +18,11 @@ class Maquina : public  IMaquinaAdministradora, IMaquinaVendedora{
 
 private:
 
-    int identificador{};
+    int identificador;
     string nombre;
-    Producto* producto{};
+    Producto* producto;
     vector<Producto*> productoList;
-    MonederoElectronico* monederoElectronico{};
+    MonederoElectronico* monederoElectronico;
 
 public:
 

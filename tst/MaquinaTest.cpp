@@ -10,9 +10,6 @@
 
 TEST(MaquinaTestSuite, VerifyMachineProcess){
 
-Producto* p1 = new ProductoNoPerecedero("j",500,9,40);
-Maquina maquina;
-maquina.insert(p1);
-EXPECT_EQ(maquina.insert(p1),"Agregado");
+EXPECT_EQ("algo","Agregado");
 
 }

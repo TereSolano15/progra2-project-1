@@ -6,7 +6,7 @@
 
 MenuCobro::MenuCobro() {}
 
-MenuCobro::MenuCobro(MonederoElectronico *monedero, Maquina *maquina) : monedero(monedero), maquina(maquina) {}
+MenuCobro::MenuCobro(MonederoElectronico *monedero, Maquina maquina) : monedero(monedero), maquina(maquina) {}
 
 void MenuCobro::metSelectProduct() {
     string nombre;
@@ -21,7 +21,7 @@ void MenuCobro::metSelectProduct() {
         cout << "Ingrese la cantidad de dinero con el que va a pagar: (2000/5000)" << endl;
         cin >> money;
 
-        verificar = maquina->realizarCompra(nombre, cantidad, money);
+        verificar = maquina.realizarCompra(nombre, cantidad, money);
         if(verificar == "El producto no existe"){
             cout << "El producto no existe, ingrese un valor valido" << endl;
         }else if(verificar == "No hay suficientes productos"){
@@ -42,7 +42,7 @@ void MenuCobro::mostrar2() {
         opcion = menuCobro();
         switch (opcion) {
             case 1:
-                maquina->toString();
+                maquina.toString();
                 break;
             case 2:
                 metSelectProduct();

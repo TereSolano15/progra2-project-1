@@ -12,13 +12,10 @@
 #include <sstream>
 
 class MenuAdministrador {
-private:
-Maquina* maquina;
 
 public:
-    MenuAdministrador();
 
-    MenuAdministrador(Maquina *maquina);
+    MenuAdministrador();
 
     void metInsert();
 

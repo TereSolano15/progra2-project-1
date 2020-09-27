@@ -6,7 +6,7 @@
 
 MenuAdministrador::MenuAdministrador() {}
 
-MenuAdministrador::MenuAdministrador(Maquina *maquina) : maquina(maquina) {}
+
 
 int MenuAdministrador::menuAdmin() {
     int opcion;
@@ -66,6 +66,7 @@ void MenuAdministrador::metInsert() {
     int precio;
     int cantidad;
     string ingresa;
+    Maquina maquina;
     bool repetir = false;
     do {
         do {
@@ -86,7 +87,7 @@ void MenuAdministrador::metInsert() {
                 cin >> dia;
 
                 Producto *producto1 = new ProductoPerecedero(nombre, precio, cantidad, dia, mes, anno);
-                maquina->insert(producto1);
+                maquina.insert(producto1);
             } else if (tipoProducto == "pnp") {
                 cout << "Por favor ingrese el nombre del producto:" << endl;
                 cin >> nombre;
@@ -97,7 +98,7 @@ void MenuAdministrador::metInsert() {
                 cout << "Por favor ingrese el procentaje de descuento que tendra el producto: " << endl;
                 cin >> porcentajeDeDescuento;
                 Producto *producto2 = new ProductoNoPerecedero(nombre, precio, cantidad, porcentajeDeDescuento);
-                maquina->insert(producto2);
+                maquina.insert(producto2);
             } else {
                 cout << "Por favor ingrese un valor valido" << endl;
             }
@@ -107,12 +108,15 @@ void MenuAdministrador::metInsert() {
         cin >> ingresa;
         if (ingresa == "y"){
             repetir=true;
+        }else if(ingresa == "n"){
+            repetir = false;
         }
     }while(repetir==true);
     system("pause");
 }
 
 void MenuAdministrador::metModificar() {
+    Maquina maquina;
     string nombre;
     string modificar;
     int cantidad;
@@ -125,11 +129,11 @@ void MenuAdministrador::metModificar() {
         if (modificar == "add") {
             cout << "Ingrese la cantidad que quiere agregar del producto: " << endl;
             cin >> cantidad;
-            maquina->addProvisions(nombre, cantidad);
+            maquina.addProvisions(nombre, cantidad);
         }else if(modificar == "rest"){
             cout << "Ingrese la cantidad que quiere disminuir del producto: " << endl;
             cin >> cantidad;
-            maquina->decreaseProvisions(nombre, cantidad);
+            maquina.decreaseProvisions(nombre, cantidad);
         } else{
             cout << "Ingrese una palabra valida" << endl;
         }
@@ -138,28 +142,31 @@ void MenuAdministrador::metModificar() {
 }
 
 void MenuAdministrador::metBorrar() {
+    Maquina maquina;
     string nombre;
     cout << "Ingrese el nombre del rpodructo que quiere eliminar: " <<endl;
     cin >> nombre;
-    maquina->eliminar(nombre);
+    maquina.eliminar(nombre);
     cout<<"El elemento ha sido eliminado correctamente" <<endl;
     system("pause");
 }
 
 void MenuAdministrador::metAddMoney() {
+    Maquina maquina;
     int money = 0;
     cout << "Ingrese la cantidad de dinero que se ingresara a la maquina: "<< endl;
     cin>>money;
-    maquina->addMoney(money);
+    maquina.addMoney(money);
     cout << "El dinero ha sido ingresado satisfactoriamente"<<endl;
     system("pause");
 }
 
 void MenuAdministrador::metDrawoutMoney() {
+    Maquina maquina;
     int money;
     cout << "Ingrese la cantidad de dinero que se retirara de la maquina: "<< endl;
     cin>>money;
-    maquina->drawOutMoney(money);
+    maquina.drawOutMoney(money);
     cout << "El dinero ha sido retirado satisfactoriamente"<<endl;
     system("pause");
 }

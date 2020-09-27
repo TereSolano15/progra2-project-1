@@ -4,6 +4,7 @@
 #include "MenuPrincipal.h"
 int main(){
     MenuPrincipal* menu = new MenuPrincipal();
-    menu->mostrar0();
+   menu->mostrar0();
     delete menu;
+    return 0;
 }
