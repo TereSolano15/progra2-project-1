@@ -111,25 +111,30 @@ void MenuAdministrador::metModificar() {
     string nombre;
     string modificar;
     int cantidad;
-    cout << "Ingrese el producto que quiere modificar: "<<endl;
-    cin >> nombre;
-
     do {
-        cout << "Desea agregar o disminuir provisiones de este producto? (add/rest)" << endl;
-        cin >> modificar;
-        if (modificar == "add") {
-            cout << "Ingrese la cantidad que quiere agregar del producto: " << endl;
-            cin >> cantidad;
-            maquina.addProvisions(nombre, cantidad);
-        }else if(modificar == "rest"){
-            cout << "Ingrese la cantidad que quiere disminuir del producto: " << endl;
-            cin >> cantidad;
-            maquina.decreaseProvisions(nombre, cantidad);
-        } else{
-            cout << "Ingrese una palabra valida" << endl;
-        }
-    }while(modificar != "add" && modificar != "rest");
 
+        cout << "Ingrese el producto que quiere modificar: " << endl;
+        cin >> nombre;
+        if(maquina.consultar(nombre)== nullptr){
+            cout << "El producto no existe, por favor ingrese correctamente"<<endl;
+        }else {
+            do {
+                cout << "Desea agregar o disminuir provisiones de este producto? (add/rest)" << endl;
+                cin >> modificar;
+                if (modificar == "add") {
+                    cout << "Ingrese la cantidad que quiere agregar del producto: " << endl;
+                    cin >> cantidad;
+                    maquina.addProvisions(nombre, cantidad);
+                } else if (modificar == "rest") {
+                    cout << "Ingrese la cantidad que quiere disminuir del producto: " << endl;
+                    cin >> cantidad;
+                    maquina.decreaseProvisions(nombre, cantidad);
+                } else {
+                    cout << "Ingrese una palabra valida" << endl;
+                }
+            } while (modificar != "add" && modificar != "rest");
+        }
+    }while(maquina.consultar(nombre)== nullptr);
 }
 
 void MenuAdministrador::metBorrar() {
