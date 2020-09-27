@@ -42,10 +42,10 @@ string Maquina::toString() {
     return s.str();
 }
 
-void Maquina::insert(Producto* producto) {
+string Maquina::insert(Producto* producto) {
 
 productoList.push_back(producto);
-
+ return "Agregado";
 }
 
 void Maquina::addProvisions(string idProducto, int cantidad) {
