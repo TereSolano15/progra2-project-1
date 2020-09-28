@@ -65,7 +65,6 @@ void MenuAdministrador::metInsert() {
     int anno;
     int precio;
     int cantidad;
-    string ingresa;
     Maquina maquina;
     bool repetir = false;
     do {
