@@ -139,11 +139,17 @@ void MenuAdministrador::metModificar() {
 void MenuAdministrador::metBorrar() {
     Maquina maquina;
     string nombre;
-    cout << "Ingrese el nombre del rpodructo que quiere eliminar: " <<endl;
-    cin >> nombre;
-    maquina.eliminar(nombre);
-    cout<<"El elemento ha sido eliminado correctamente" <<endl;
-    system("pause");
+    do {
+        cout << "Ingrese el nombre del producto que quiere eliminar: " << endl;
+        cin >> nombre;
+        if(maquina.consultar(nombre)== nullptr) {
+            cout << "El producto no existe, por favor ingrese correctamente"<<endl;
+        }else {
+            maquina.eliminar(nombre);
+            cout << "El elemento ha sido eliminado correctamente" << endl;
+        }
+
+    }while(maquina.consultar(nombre)== nullptr);
 }
 
 void MenuAdministrador::metAddMoney() {
